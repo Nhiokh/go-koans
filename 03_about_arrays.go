@@ -15,15 +15,15 @@ func aboutArrays() {
 
 	assert(fruits == [4]string{}) // comparing arrays is not like comparing apples and oranges
 
-	tasty_fruits := fruits[1:3]                           // defining oneself as a variation of another
-	assert(fmt.Sprintf("%T", tasty_fruits) == __string__) //and get not a simple array as a result
-	assert(tasty_fruits[0] == __string__)                 // slices of arrays share some data
-	assert(tasty_fruits[1] == __string__)                 // albeit slightly askewed
+	tastyFruits := fruits[1:3]                           // defining oneself as a variation of another
+	assert(fmt.Sprintf("%T", tastyFruits) == __string__) //and get not a simple array as a result
+	assert(tastyFruits[0] == __string__)                 // slices of arrays share some data
+	assert(tastyFruits[1] == __string__)                 // albeit slightly askewed
 
-	assert(len(tasty_fruits) == __int__) // its length is manifest
-	assert(cap(tasty_fruits) == __int__) // but its capacity is surprising!
+	assert(len(tastyFruits) == __int__) // its length is manifest
+	assert(cap(tastyFruits) == __int__) // but its capacity is surprising!
 
-	tasty_fruits[0] = "lemon" // are their shared roots truly identical?
+	tastyFruits[0] = "lemon" // are their shared roots truly identical?
 
 	assert(fruits[0] == __string__) // has this element remained the same?
 	assert(fruits[1] == __string__) // how about the second?
