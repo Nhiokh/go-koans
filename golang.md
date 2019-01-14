@@ -58,7 +58,7 @@ func add(x int, y int) int {
 
 func main() {
   var res = add(6,2)
-	fmt.Println(res)
+  fmt.Println(res)
 }
 ```
 
