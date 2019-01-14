@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Counter
+// Counter iterate from 0 to 999 and pass each value via a channel
 func counter(out chan<- int) {
 	for x := 0; x < 1000; x++ {
 		out <- x
@@ -10,7 +10,7 @@ func counter(out chan<- int) {
 	close(out)
 }
 
-// Squarer
+// Squarer take values coming from a channel and pass its squared value in another
 func squarer(out chan<- int, in <-chan int) {
 	for sq := range in {
 		out <- sq * sq
@@ -18,23 +18,16 @@ func squarer(out chan<- int, in <-chan int) {
 	close(out)
 }
 
-// Printer
+// Printer logs every value passed down by a channel
 func printer(in <-chan int) {
 	for sq := range in {
 		fmt.Println(sq)
 	}
 }
 
-func add(x int, y int) int {
-	return x + y
-}
-
 func main() {
 	naturals := make(chan int)
 	squares := make(chan int)
-
-	var res int = add(6, 2)
-	fmt.Println(res)
 
 	go counter(naturals)
 	go squarer(squares, naturals)
