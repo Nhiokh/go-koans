@@ -13,7 +13,8 @@ func aboutBasics() {
 	assert(__bool__ == true)  // what is truth?
 	assert(__bool__ != false) // in it there is nothing false
 
-	var i int = __int__
+	var i = __int__ // type is infered
+
 	assert(i == 1.0000000000000000000000000000000000000) // precision is in the eye of the beholder
 
 	k := __int__ // short assignment can be used, as well (using ':=' operator)
@@ -53,7 +54,7 @@ const (
 	__delete_me__    bool    = false
 )
 
-var __runner__ runner = nil
+var __runner__ runner
 
 func _getRecentLine() string {
 	_, file, line, _ := runtime.Caller(2)
