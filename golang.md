@@ -45,7 +45,7 @@ controls: true
 
 --
 
-### Une syntaxe similaire à Typescript
+### Syntaxe similaire à Typescript
 
 ```go
 package main
@@ -61,6 +61,10 @@ func main() {
   fmt.Println(res)
 }
 ```
+
+--
+
+### Librairie standard conséquente
 
 --
 
